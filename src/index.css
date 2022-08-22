@@ -27,7 +27,7 @@ code {
   
 }
 .table_div{
-  overflow-y: auto;
+  overflow-x: auto;
   }
 p{
   font-style: normal;
