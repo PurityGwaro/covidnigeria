@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { useSelector } from 'react-redux'
 
 function App() {
+
+const data = useSelector(state => state.data)
+
+// console.log({data})
+
+if(!data) return <div>Loading...</div>
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Covid Data</h3>
+      <p><b>Total Samples Tested:</b> {data.totalSamplesTested}</p>
+      <p><b>Total Confirmed Cases:</b> {data.totalConfirmedCases}</p>
+      <p><b>Total Active Cases:</b> {data.totalActiveCases}</p>
+      <p><b>Discharged:</b> {data.discharged}</p>
+      <p><b>Deaths:</b> {data.deaths}</p>
+      <p><b>No. Of States:</b> {data.states.length}</p>
+      <h3>States</h3>
+      <table>
+        <thead>
+          <tr>
+          <th>state</th>
+          <th>confirmed cases</th>
+          <th>cases on admission</th>
+          <th>discharged</th>
+          <th>death</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.states.map((state) => <tr>
+            <td>{state.state}</td>
+            <td>{state.confirmedCases}</td>
+            <td>{state.casesOnAdmission}</td>
+            <td>{state.discharged}</td>
+            <td>{state.death}</td>
+          </tr>)}
+        </tbody>
+      </table>
     </div>
   );
 }
