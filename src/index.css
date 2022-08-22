@@ -37,7 +37,7 @@ code {
   font-size: 30px;
   line-height: 50px;
   color: #4E598C;
-  margin: 0;
+  margin: 1rem 0;
 }
 .App{
   display: flex;
@@ -50,7 +50,7 @@ p{
   font-weight: normal;
   font-size: 20px;
   line-height: 30px;
-  margin: 0;
+  margin-bottom: 1rem;
 }
 td, th{
   padding: 1rem 2rem;
