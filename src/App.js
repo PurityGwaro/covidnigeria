@@ -4,28 +4,28 @@ function App() {
 
 const data = useSelector(state => state.data)
 
-// console.log({data})
+console.log({data})
 
 if(!data) return <div>Loading...</div>
 
   return (
     <div className="App">
-      <h3>Covid Data</h3>
+      <h3 className='title'>Covid Data</h3>
       <p><b>Total Samples Tested:</b> {data.totalSamplesTested}</p>
       <p><b>Total Confirmed Cases:</b> {data.totalConfirmedCases}</p>
       <p><b>Total Active Cases:</b> {data.totalActiveCases}</p>
       <p><b>Discharged:</b> {data.discharged}</p>
-      <p><b>Deaths:</b> {data.deaths}</p>
+      <p><b>Deaths:</b> {data.death}</p>
       <p><b>No. Of States:</b> {data.states.length}</p>
-      <h3>States</h3>
-      <table>
-        <thead>
+      <h3 className='title'>States</h3>
+      <table >
+        <thead className='table-header'>
           <tr>
-          <th>state</th>
-          <th>confirmed cases</th>
-          <th>cases on admission</th>
-          <th>discharged</th>
-          <th>death</th>
+          <th>State</th>
+          <th>Confirmed cases</th>
+          <th>Cases on Admission</th>
+          <th>Discharged</th>
+          <th>Death</th>
           </tr>
         </thead>
         <tbody>
