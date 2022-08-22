@@ -18,6 +18,7 @@ if(!data) return <div>Loading...</div>
       <p><b>Deaths:</b> {data.death}</p>
       <p><b>No. Of States:</b> {data.states.length}</p>
       <h3 className='title'>States</h3>
+      <section className='table_div'>
       <table >
         <thead className='table-header'>
           <tr>
@@ -29,7 +30,8 @@ if(!data) return <div>Loading...</div>
           </tr>
         </thead>
         <tbody>
-          {data.states.map((state) => <tr>
+          {data.states.map((state) => 
+          <tr>
             <td>{state.state}</td>
             <td>{state.confirmedCases}</td>
             <td>{state.casesOnAdmission}</td>
@@ -38,6 +40,7 @@ if(!data) return <div>Loading...</div>
           </tr>)}
         </tbody>
       </table>
+      </section>
     </div>
   );
 }
